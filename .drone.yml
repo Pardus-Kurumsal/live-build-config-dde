@@ -1,0 +1,10 @@
+build:
+  image: pardus:onyedi
+  privileged: true
+  volumes:
+    - /var/dockers/images:/var/images
+    - /etc/localtime:/etc/localtime:ro
+  commands:
+    - apt-get update
+    - apt-get install curl live-build
+    - ./build.sh --distribution onyedi --variant dde --verbose
